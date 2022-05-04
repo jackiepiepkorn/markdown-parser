@@ -17,16 +17,16 @@ public class MarkdownParse {
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
+            if(closeBracket == -1 || closeParen == -1){
+
+                break;
+            }
             if(openBracket == -1 || openParen == -1){
 
                 break;
 
             }
-            if(closeBracket == 0){
-
-                break;
-            }
-            if(markdown.charAt(openBracket-1) != exclamation_point){
+            if(openBracket != 0 && markdown.charAt(openBracket-1) != exclamation_point){
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
 
