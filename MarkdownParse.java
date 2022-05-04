@@ -22,6 +22,10 @@ public class MarkdownParse {
                 break;
 
             }
+            if(closeBracket == 0){
+
+                break;
+            }
             if(markdown.charAt(openBracket-1) != exclamation_point){
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
