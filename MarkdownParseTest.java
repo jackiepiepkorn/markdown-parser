@@ -19,15 +19,18 @@ public class MarkdownParseTest {
     public void snippet2() throws IOException {
         
         String content = Files.readString(Paths.get("snippet2.md"));
-        assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(content));
+        assertEquals(List.of("a.com", "a.com(())", "example.com"),
+        MarkdownParse.getLinks(content));
     }
                      
     @Test
     public void snippet3() throws IOException {
         
         String content = Files.readString(Paths.get("snippet3.md"));
-        assertEquals(List.of("https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedu",
-                             "https://cse.ucsd.edu/"), MarkdownParse.getLinks(content));
+        assertEquals(List.of("https://www.twitter.com", 
+        "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedu",
+                             "https://cse.ucsd.edu/"),
+                             MarkdownParse.getLinks(content));
     }
 
 }
